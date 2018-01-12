@@ -63,6 +63,7 @@ class AutocompleteExample extends Component {
           data={films.length === 1 && comp(query, films[0].title) ? [] : films}
           defaultValue={query}
           onChangeText={text => this.setState({ query: text })}
+          onBlur={text => this.setState({ query: text })}
           placeholder="Enter Star Wars film title"
           renderItem={({ title, release_date }) => (
             <TouchableOpacity onPress={() => this.setState({ query: title })}>
